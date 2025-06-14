@@ -10,7 +10,7 @@ import { supabase } from "../../Bruno/app-delivery/src/lib/supabase";
 const Stack = createStackNavigator();
 
 
-// ✅ Contexto Global do Carrinho
+//Contexto Global do Carrinho
 const CarrinhoContext = createContext();
 
 const CarrinhoProvider = ({ children }) => {
@@ -45,7 +45,7 @@ const CarrinhoProvider = ({ children }) => {
 const useCarrinho = () => useContext(CarrinhoContext);
 
 
-// 🔗 Lista de Produtos
+//Lista de Produtos
 const products = [
   { id: '1', name: 'Coxinha', price: 5, image: 'https://static.itdg.com.br/images/auto-auto/52b96f7095b56f027799bbe66dfd9532/coxinha-crocante.jpg' },
   { id: '2', name: 'Batatinha Frita', price: 7, image: 'https://img.cdndsgni.com/preview/11098398.jpg' },
@@ -55,7 +55,7 @@ const products = [
 let pedidosRealizados = [];
 
 
-// 🔐 Login
+//Login
 function LoginScreen({ navigation }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -102,7 +102,7 @@ function LoginScreen({ navigation }) {
 }
 
 
-// 📝 Cadastro
+//Cadastro
 function RegisterScreen({ navigation }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -146,7 +146,7 @@ function RegisterScreen({ navigation }) {
 }
 
 
-// 🍔 Menu de Produtos
+//Menu de Produtos
 function MenuScreen({ navigation }) {
   const { addItem, clearCart } = useCarrinho();
 
@@ -195,7 +195,7 @@ function MenuScreen({ navigation }) {
 }
 
 
-// 🧾 Tela Resumo do Pedido
+//Tela Resumo do Pedido
 function ResumoScreen({ navigation }) {
   const { selectedItems, total, removeItem } = useCarrinho();
 
@@ -247,7 +247,7 @@ function ResumoScreen({ navigation }) {
 }
 
 
-// 💳 Pagamento
+//Pagamento
 function PagamentoScreen({ navigation }) {
   const { selectedItems, total, clearCart } = useCarrinho();
 
@@ -280,7 +280,7 @@ function PagamentoScreen({ navigation }) {
 }
 
 
-// 🎉 Finalização
+//Finalização
 function FinalizacaoScreen({ navigation }) {
   return (
     <View style={styles.container}>
@@ -298,7 +298,7 @@ function FinalizacaoScreen({ navigation }) {
 }
 
 
-// 📜 Tela Meus Pedidos
+//Tela Meus Pedidos
 function PedidosScreen() {
   return (
     <ScrollView style={styles.container}>
@@ -323,7 +323,7 @@ function PedidosScreen() {
 }
 
 
-// 🔗 App Principal
+//App Principal
 export default function App() {
   return (
     <CarrinhoProvider>
@@ -343,7 +343,7 @@ export default function App() {
 }
 
 
-// 🎨 Estilos
+//Estilos
 const styles = StyleSheet.create({
   container: {
     flex: 1,
